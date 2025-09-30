@@ -16,7 +16,10 @@ public class Stack<T>{
             this.tamanioPila++;
         }
     }
-    public T peek(){
+    public T peek() throws Exception{
+        if(this.tamanioPila == 0){
+            throw new Exception("La pila está vacía");
+        }
         return this.superior.valor;
     }
     public T pop() throws Exception{
